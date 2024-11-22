@@ -4,9 +4,6 @@
 :root {
   --mainColor: #0b9586;
   --textColor: #fff;
-  --smallTextFont: 400 18px/21.78px;
-  --smallTextLetterSpacing: 0.94px;
-  --mediumTextFont: 700 24px/28px;
 }
 /* End Global Variables */
 
@@ -30,17 +27,128 @@ body {
 }
 /* End Global Rules */
 
+/* Start Typography */
+.large-text-regular {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px; 
+}
+.large-text-bold {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 50.83px;
+  letter-spacing: -0.02em;
+}
+
+.medium-text-regular {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.medium-text-bold {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.medium-text-semibold {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.small-text-regular {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  letter-spacing: 0.08em;
+}
+.small-text-semibold {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+/* End Typography */
+
+/* Start Combonents */
+.section {
+  width: 100%;
+  padding: 80px 100px;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.button {
+  width: fit-content;
+  height: 40px;
+  padding: 12px 34px;
+  border: none;
+  border-radius: 109px;
+  -webkit-border-radius: 109px;
+  -moz-border-radius: 109px;
+  -ms-border-radius: 109px;
+  -o-border-radius: 109px;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 30px 0 #0000000d;
+}
+.card > img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card > .text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  text-align: left;
+}
+
+.card > .text > h3 {
+  color: #101828;
+}
+
+.card > .text > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: #475467;
+}
+
+.card > .text > a {
+  color: #3cab90;
+}
+.card > .text > a > span {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+/* End Combonents */
+
 /* Start Navigation Bar Style */
 nav {
   background-color: var(--mainColor);
   width: 100%;
   height: 86px;
   padding: 16px 150px;
-  position: fixed;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
-
+nav > .logo {
+  display: none;
+}
 nav > .Placeholder-image {
   width: 157px;
   height: 54px;
@@ -51,13 +159,16 @@ nav > .links {
   width: 506px;
   height: 38px;
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 
 nav > .links > li {
   padding: 8px 28px;
-  font: var(--smallTextFont);
-  letter-spacing: var(--smallTextLetterSpacing);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.94px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -80,18 +191,309 @@ nav > .call-us {
   align-items: flex-end;
 }
 nav > .call-us > :first-child {
-  font: var(--smallTextFont);
-  letter-spacing: var(--smallTextLetterSpacing);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.94px;
   color: var(--textColor);
 }
 nav > .call-us > :first-child {
-  font: var(--smallTextFont);
-  letter-spacing: var(--smallTextLetterSpacing);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.94px;
   color: var(--textColor);
 }
 nav > .call-us > :last-child {
-  font: var(--mediumTextFont);
-  letter-spacing: var(--smallTextLetterSpacing);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.94px;
   color: var(--textColor);
 }
 /* End Navigation Bar Style */
+
+/* Start Solar Section Style */
+.solar-section {
+  background-image: url("images/solar-panels-meadow\ 1.png");
+  background-size: cover;
+  width: 100%;
+  height: 650px;
+  position: relative;
+}
+
+.solar-section > .slider-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 330px;
+  height: 25px;
+  position: relative;
+  top: 55px;
+  left: 50px;
+}
+
+.solar-section > .slider-bar > span:first-child,
+.solar-section > .slider-bar > span:last-child {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.94px;
+  color: var(--textColor);
+}
+
+.solar-section > .slider-bar > .bar {
+  width: 220px;
+  height: 4px;
+  background-color: #575757;
+}
+
+.solar-section > .slider-bar > .bar::before {
+  content: "";
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 4px;
+  background-color: var(--textColor);
+}
+
+.solar-section > .text {
+  width: 730px;
+  min-height: 300px;
+  position: relative;
+  top: 160px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.solar-section > .text > .title {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 62px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: var(--textColor);
+}
+
+.solar-section > .text > .desc {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: var(--textColor);
+}
+
+.solar-section > .text > .buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.solar-section > .text > .buttons > button:first-child {
+  background-color: #3cab90;
+  color: var(--textColor);
+}
+
+.solar-section > .text > .buttons > button:last-child {
+  background-color: #ffbb1c;
+  color: #2a3334;
+}
+/* End Solar Section Style */
+
+/* Start Friendliest Section Style */
+.friendliest-section {
+  height: 700px;
+  display: flex;
+  gap: 100px;
+  background-color: #fff;
+}
+
+.friendliest-section > .text-box > .title {
+  text-align: left;
+  color: #101828;
+}
+
+.friendliest-section > .text-box > .desc {
+  text-align: left;
+  color: #475467;
+}
+
+.friendliest-section > .text-box > .list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.friendliest-section > .text-box > .list > li {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: #101828;
+}
+
+.friendliest-section > .text-box > .list > li > span {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.28px;
+  letter-spacing: 4px;
+  color: #84bd3a;
+  text-align: left;
+  margin-inline-end: 5px;
+}
+
+.friendliest-section > .image {
+  width: 520px;
+  height: 552px;
+  position: relative;
+}
+
+.friendliest-section > .image > .info {
+  position: absolute;
+  width: 266px;
+  height: 208px;
+  top: 310px;
+  left: -60px;
+  padding: 24px 30px;
+  background-color: #ffbb1c;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.friendliest-section > .image > .info > p {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20.95px;
+  letter-spacing: 0.93px;
+  text-align: left;
+  color: #2a3334;
+}
+/* End Friendliest Section Style */
+
+/* Start Power Section Style */
+.power-section {
+  background-image: url("images/8116\ 1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 450px;
+}
+
+.power-section > .text-box {
+  width: 600px;
+}
+
+.power-section > .text-box > .title {
+  text-align: left;
+  color: #ffffff;
+}
+
+.power-section > .text-box > .desc {
+  text-align: left;
+  color: #fff;
+}
+
+.power-section > .text-box > .button {
+  background-color: #ffbb1c;
+}
+/* End Power Section Style */
+/* Start Solar Kits Section Style */
+.solarkits-section {
+  height: auto;
+}
+
+.solarkits-section > .text {
+  text-align: center;
+  padding: 0 100px;
+  margin-bottom: 24px;
+}
+
+.solarkits-section > .text > .title {
+  color: #101828;
+  margin-bottom: 24px;
+}
+
+.solarkits-section > .text > .desc {
+  color: #475467;
+}
+
+.solarkits-section > .cards {
+  display: flex;
+  gap: 32px;
+}
+/* End Solar Kits Section Style */
+/* Stsrt Repairs Section Style */
+.repairs-section {
+  height: 500px;
+  background-image: url("images/8116\ 1\ \(1\).png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.repairs-section > .text-box {
+  color: #fff;
+  text-align: center;
+  padding: 44px;
+  background-color: #00000091;
+  filter: blur(24);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  -webkit-filter: blur(24);
+}
+/* End Repairs Section Style */
+
+/* Start Energy Section Style */
+.energy-section {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffbb1c0d;
+}
+
+.energy-section > .text-box {
+  position: relative;
+}
+
+.energy-section > .text-box > .icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3cab90;
+  outline: 12px solid #3CAB9026;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.energy-section > .text-box > .icon > img {
+  width: 28px;
+  height: 28px;
+}
+
+.energy-section > .text-box {
+  text-align: left;
+}
+
+.energy-section > .text-box > .title{
+  color: #101828;
+}
+
+.energy-section > .text-box > .desc{
+  color: #475467;
+}
+/* End Energy Section Style */
