@@ -2,8 +2,13 @@
 
 /* Start Global Variables */
 :root {
-  --mainColor: #0b9586;
-  --textColor: #fff;
+  --PrimaryColor: #0c6457;
+  --onPrimaryColor: #fff;
+  --secondaryColor: #ffbb1c;
+  --onSecondaryColor: #2b3536;
+  --primaryTextColor: #101828;
+  --secondartTextColor: #475467;
+  --backgroundColor: #fff;
 }
 /* End Global Variables */
 
@@ -56,6 +61,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dark-title {
+  color: var(--primaryTextColor);
+}
+.dark-desc {
+  color: var(--secondartTextColor);
+}
+.light-title,
+.light-desc {
+  color: var(--onPrimaryColor);
 }
 /* End utility classes */
 
@@ -143,10 +167,13 @@ body {
   -ms-border-radius: 109px;
   -o-border-radius: 109px;
 }
-.cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 32px;
+.primary {
+  background-color: var(--PrimaryColor);
+  color: var(--onPrimaryColor);
+}
+.secondary {
+  background-color: var(--secondaryColor);
+  color: var(--onSecondaryColor);
 }
 .card {
   flex: 1;
@@ -225,13 +252,10 @@ body {
 
 /* Start Navigation Bar Style */
 nav {
-  background-color: var(--mainColor);
+  background-color: var(--PrimaryColor);
   width: 100%;
   height: 86px;
   padding: 16px 150px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 nav > .logo {
   background-color: #e5e5e5;
@@ -249,16 +273,9 @@ nav > .logo > img {
 nav > .links {
   width: 506px;
   height: 38px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 nav > .links > li {
   padding: 8px 28px;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.94px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -270,33 +287,16 @@ nav > .links > li.active {
   font-weight: 600;
 }
 nav > .links > li > a {
-  color: var(--textColor);
+  color: var(--onPrimaryColor);
 }
 nav > .call-us {
-  display: flex;
-  flex-direction: column;
   align-items: flex-end;
 }
-nav > .call-us > :first-child {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.94px;
-  color: var(--textColor);
+nav > .call-us > span:first-child {
+  color: var(--onPrimaryColor);
 }
-nav > .call-us > :first-child {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.94px;
-  color: var(--textColor);
-}
-nav > .call-us > :last-child {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: 0.94px;
-  color: var(--textColor);
+nav > .call-us > span:last-child {
+  color: var(--onPrimaryColor);
 }
 /* End Navigation Bar Style */
 
@@ -309,9 +309,6 @@ nav > .call-us > :last-child {
   position: relative;
 }
 .solar-section > .slider-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 330px;
   height: 25px;
   position: relative;
@@ -320,15 +317,13 @@ nav > .call-us > :last-child {
 }
 .solar-section > .slider-bar > span:first-child,
 .solar-section > .slider-bar > span:last-child {
-  color: var(--textColor);
+  color: var(--onPrimaryColor);
 }
-
 .solar-section > .slider-bar > .bar {
   width: 220px;
   height: 4px;
   background-color: #575757;
 }
-
 .solar-section > .slider-bar > .bar::before {
   content: "";
   position: relative;
@@ -337,9 +332,8 @@ nav > .call-us > :last-child {
   left: 0;
   width: 90px;
   height: 4px;
-  background-color: var(--textColor);
+  background-color: var(--onPrimaryColor);
 }
-
 .solar-section > .text-box {
   width: 729px;
   height: 300px;
@@ -347,33 +341,20 @@ nav > .call-us > :last-child {
   top: 160px;
   left: 50px;
 }
-
-.solar-section > .text-box > .title {
+.solar-section > .text-box > .large-title {
   font-size: 52px;
   font-weight: 600;
   line-height: 62px;
   letter-spacing: -0.02em;
   text-align: left;
-  color: var(--textColor);
+  color: var(--onPrimaryColor);
 }
-
-.solar-section > .text-box > .desc {
-  color: var(--textColor);
+.solar-section > .text-box > .large-desc {
+  color: var(--onPrimaryColor);
 }
-
 .solar-section > .text-box > .buttons {
   display: flex;
   gap: 20px;
-}
-
-.solar-section > .text-box > .buttons > button:first-child {
-  background-color: #3cab90;
-  color: var(--textColor);
-}
-
-.solar-section > .text-box > .buttons > button:last-child {
-  background-color: #ffbb1c;
-  color: #2a3334;
 }
 /* End Solar Section Style */
 
@@ -382,37 +363,19 @@ nav > .call-us > :last-child {
   height: 700px;
   display: flex;
   gap: 100px;
-  background-color: #fff;
+  background-color: var(--backgroundColor);
 }
-
-.friendliest-section > .text-box > .title {
-  color: #101828;
-}
-
-.friendliest-section > .text-box > .desc {
-  color: #475467;
-}
-
 .friendliest-section > .text-box > .list {
-  display: flex;
-  flex-direction: column;
   gap: 12px;
 }
-
 .friendliest-section > .text-box > .list > li {
-  color: #101828;
+  color: var(--primaryTextColor);
 }
-
 .friendliest-section > .text-box > .list > li > span {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 23.28px;
-  letter-spacing: 4px;
   color: #84bd3a;
   text-align: left;
   margin-inline-end: 5px;
 }
-
 .friendliest-section > .image {
   width: 520px;
   height: 552px;
@@ -425,7 +388,7 @@ nav > .call-us > :last-child {
   top: 310px;
   left: -60px;
   padding: 24px 30px;
-  background-color: #ffbb1c;
+  background-color: var(--secondaryColor);
 }
 .friendliest-section > .image > .info > p {
   margin-top: 15px;
@@ -443,30 +406,19 @@ nav > .call-us > :last-child {
 .power-section > .text-box {
   width: 600px;
 }
-.power-section > .text-box > .title {
-  color: #ffffff;
-}
-.power-section > .text-box > .desc {
-  color: #fff;
-}
-.power-section > .text-box > .button {
-  background-color: #ffbb1c;
-}
 /* End Power Section Style */
 
 /* Start Solar Kits Section Style */
 .solarkits-section {
+  background-color: var(--backgroundColor);
   height: auto;
 }
 .solarkits-section > .text-box {
   padding: 0 100px;
   margin-bottom: 40px;
 }
-.solarkits-section > .text-box > .title {
-  color: #101828;
-}
-.solarkits-section > .text-box > .desc {
-  color: #475467;
+.solarkits-section > .cards {
+  gap: 32px;
 }
 /* End Solar Kits Section Style */
 /* Stsrt Repairs Section Style */
@@ -487,7 +439,6 @@ nav > .call-us > :last-child {
 }
 .repairs-section > .overlay > .text-box {
   width: 800px;
-  color: #fff;
   padding: 44px;
   background-color: #00000091;
   backdrop-filter: blur(24px);
@@ -502,6 +453,9 @@ nav > .call-us > :last-child {
 }
 .energy-section > div {
   flex: 1;
+}
+.energy-section >.cards {
+  gap: 32px;
 }
 .energy-section > .cards > .rounded-card > .image {
   background-color: #3cab9026;
@@ -523,23 +477,17 @@ nav > .call-us > :last-child {
   width: 28px;
   height: 28px;
 }
-.energy-section > .text-box > .title {
-  color: #101828;
-}
-.energy-section > .text-box > .desc {
-  color: #475467;
-}
-.energy-section > .cards {
-  flex-direction: column;
-}
 /* End Energy Section Style */
 
 /* Start Our Values Section Style */
 .ourvalues-section {
-  background-color: #fff;
+  background-color: var(--backgroundColor);
 }
 .ourvalues-section > .text-box {
   margin-bottom: 40px;
+}
+.ourvalues-section >.cards {
+  gap: 32px;
 }
 .ourvalues-section > .cards > .rounded-card {
   background-color: #3cab900d;
@@ -554,7 +502,7 @@ nav > .call-us > :last-child {
 /* End Our Values Section Style */
 /* Start WOC Section Style */
 .woc-section {
-  background-color: #fff;
+  background-color: var(--backgroundColor);
   display: flex;
   align-items: center;
   gap: 32px;
@@ -587,13 +535,10 @@ nav > .call-us > :last-child {
   align-items: flex-start;
   gap: 40px;
 }
-.woc-section > .rounded-card > .top > .text {
-  display: flex;
-  flex-direction: column;
+.woc-section > .rounded-card > .top > .text-box {
   gap: 52px;
 }
-.woc-section > .rounded-card > .top > .text > .title {
-  font-family: Plus Jakarta Sans;
+.woc-section > .rounded-card > .top > .text-box > .title {
   font-size: 16px;
   font-weight: 700;
   line-height: 20.16px;
@@ -601,7 +546,7 @@ nav > .call-us > :last-child {
   text-decoration-skip-ink: none;
   color: #3cab90;
 }
-.woc-section > .rounded-card > .top > .text > .desc {
+.woc-section > .rounded-card > .top > .text-box > .desc {
   font-size: 24px;
   font-weight: 400;
   line-height: 36px;
@@ -621,11 +566,6 @@ nav > .call-us > :last-child {
 }
 .woc-section > .rounded-card > .top > .bullets > li.active {
   background-color: #6b6b6b;
-}
-.woc-section > .rounded-card > .bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 .woc-section > .rounded-card > .bottom > .info {
   display: flex;
@@ -752,23 +692,23 @@ footer > .bottom {
   align-items: center;
   justify-content: space-between;
 }
-footer > .bottom>.links {
+footer > .bottom > .links {
   display: flex;
   align-items: center;
 }
-footer > .bottom>.links>li {
+footer > .bottom > .links > li {
   position: relative;
 }
-footer > .bottom>.links>li::after {
+footer > .bottom > .links > li::after {
   position: relative;
-  content: '|';
+  content: "|";
   padding: 0 20px;
-  color: #92989F;
+  color: #92989f;
 }
-footer > .bottom>.links>li>a {
-  color: #92989F;
+footer > .bottom > .links > li > a {
+  color: #92989f;
 }
-footer > .bottom>.copy-right {
-  color: #92989F;
+footer > .bottom > .copy-right {
+  color: #92989f;
 }
 /* End Footer Style */
